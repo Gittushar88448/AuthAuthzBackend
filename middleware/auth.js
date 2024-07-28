@@ -37,3 +37,41 @@ exports.auth = (req, res, next) => {
 
 }
 
+// Authorization for student
+exports.isStudent = (req, res, next) => {
+    try {
+        if (req.userObject.role !== "Student") {
+            return res.status(401).json({
+                success: false,
+                message: "Protected route only for students"
+            });
+        }
+        next();
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "user role can not verified"
+        });
+    }
+}
+
+
+// Authorization for admin
+exports.isAdmin = (req, res, next) => {
+    try {
+        if (req.userObject.role !== "Admin") {
+            return res.status(401).json({
+                success: false,
+                message: "Protected route only for Admin"
+            });
+        }
+        next();
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "user role can not verified"
+        });
+    }
+}
