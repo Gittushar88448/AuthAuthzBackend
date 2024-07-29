@@ -104,19 +104,19 @@ Response:
     "message": "User logged in successfully"
 }
 
-# Middleware
+## Middleware
 Auth Middleware
 - auth.js
 - Verifies the JWT token and extracts the user information
 - verify roles
 - Checks the user's role and grants access to specific routes
 
-# Running Tests
+## Running Tests
 You can use tools like Postman or Insomnia to test the API endpoints.
 Contributing
 Feel free to fork the repository and create pull requests. Contributions are welcome!
 
-# License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 
